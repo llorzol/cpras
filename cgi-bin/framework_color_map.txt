@@ -1,0 +1,10 @@
+#                    Columbia Plateau Framework Model
+#		
+# January 02, 2013		
+#		
+raster	color	description
+obtop	#FFFF82	Overburden
+smtop	#EBA8A8	Saddle Mountains Basalt
+wntop	#91C691	Wanapum Basalt
+grtop	#BE977B	Grande Ronde Basalt
+pmtop	#B6BEE9	Older bedrock

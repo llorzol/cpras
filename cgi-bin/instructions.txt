@@ -1,0 +1,208 @@
+  
+ scp llorzol@ra.wr.usgs.gov://workspace/cpras/xsec .
+
+./framework_well_log.py --longitude -120.81387691535224 --latitude 46.423308095146126 --x_coordinate 1561263.8314058625 --y_coordinate 397630.901255142 --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --color framework_color_map.txt --northwest_corner 1210631.621,1189639.234 --northeast_corner 2951131.621,1189639.234 --southwest_corner 1210631.621,-405860.766 --southeast_corner 2951131.621,-405860.766
+
+./test_well_log.py --longitude -120.81387691535224 --latitude 46.423308095146126 --x_coordinate 1561263.8314058625 --y_coordinate 397630.901255142 --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --color framework_color_map.txt --northwest_corner 1210631.621,1189639.234 --northeast_corner 2951131.621,1189639.234 --southwest_corner 1210631.621,-405860.766 --southeast_corner 2951131.621,-405860.766
+
+ framework_well_log.py --longitude -118.44 --latitude 47.23 --x 2151200 --y 700920 --rasters G:\cpras\www\cgi-bin\tiffs\obtop.tif
+
+ ./framework_well_log.py --longitude -118.44 --latitude 47.23 --x 2151200 --y 700920 --rasters tiffs/obtop.tif tiffs/smtop.tif --color framework_color_map.txt
+
+ pdf_well_log.py --longitude -118.44 --latitude 47.23 --x 2151200 --y 700920 --rasters G:\cpras\www\cgi-bin\tiffs\obtop.tif  G:\cpras\www\cgi-bin\tiffs\smtop.tif --color framework_color_map.txt
+
+ ./pdf_well_log.py --longitude -119.3 --latitude 46.98 --x 1939931 --y 602769 --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --color framework_color_map.txt
+
+
+ framework_well_log.py --longitude -77.771197 --latitude 38.5852 --x 482003 --y 2405432 --rasters tiffs/landsurface.tif tiffs/bsmt.tif --color framework_color_map.txt
+
+
+Meras
+--------------------------
+https://www2.usgs.gov/water/lowermississippigulf/lmgweb/meras/cell_log.html?longitude=-90.56030273437501&latitude=35.58957442626628&x_coordinate=488342.3379111708&y_coordinate=1406764.344100535
+
+https://www2.usgs.gov/water/lowermississippigulf/lmgweb/meras/xsec_log.html?longlats=-90.56030273437501,35.58957442626628%20-89.48364257812501,35.26729962135736&points=488342.3379111708,1406764.344100535%20587330.7571170385,1376855.9975995924&color_file=null
+
+
+color	framework_color_map.txt
+latitude	38.5852016943632
+longitude	-77.7711975534921
+northeast_corner	2695815,3849715
+northwest_corner	2715,3849715
+rasters	tiffs/landsurface.tif tiffs/bsmt.tif
+southeast_corner	2695815,970315
+southwest_corner	2715,970315
+x_coordinate	482003.54088289983
+y_coordinate	2405432.536006191
+
+
+
+ cross section
+ -----------------------------------
+
+ ./framework_xsec.py --points 1843642,499419 1853323,53234 --color framework_color_map.txt --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --y_axis Elevation above NAVD 1988, in feet
+
+ ./framework_xsec.py --points 1943769,515290 1953565,530032 --color framework_color_map.txt --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --y_axis Elevation above NAVD 1988, in feet
+
+ ./framework_xsec.py --points 1820762,532021 1833108,550373 --color framework_color_map.txt --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --y_axis Elevation above NAVD 1988, in feet
+
+ ./framework_xsec.py --points 1632869,443676 1632863,429089  --color framework_color_map.txt --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --y_axis Elevation above NAVD 1988, in feet
+
+
+
+
+
+ ./gdal_calc.py -A obtop --type Float32 --outfile=tiffs/obtop.tif --calc="A*(A>-99999999999.99)" --NoDataValue=-9999999.00
+
+ ./gdal_calc.py -A smtop --type Float32 --outfile=tiffs/smtop.tif --calc="A*(A>-99999999999.99)" --NoDataValue=-9999999.00
+
+ ./gdal_calc.py -A wntop --type Float32 --outfile=tiffs/wntop.tif --calc="A*(A>-99999999999.99)" --NoDataValue=-9999999.00
+
+ ./gdal_calc.py -A grtop --type Float32 --outfile=tiffs/grtop.tif --calc="A*(A>-99999999999.99)" --NoDataValue=-9999999.00
+
+ ./gdal_calc.py -A pmtop --type Float32 --outfile=tiffs/pmtop.tif --calc="A*(A>-99999999999.99)" --NoDataValue=-9999999.00
+
+
+---------------------------------------------------------------------------------------
+National Public Web server 
+---------------------------------------------------------------------------------------
+
+ on mcmc
+
+ aklogin
+
+
+ cd /afs/.usgs.gov/www/or.water/htdocs/projs_dir/nacp
+
+ cd /afs/.usgs.gov/www/or.water/cgi-bin/nacp
+
+ to see well log images
+-------------------------------------
+ Must have a small read/write directory made
+
+ /afs/.usgs.gov/www/or.water/htdocs/projs_dir/cpras
+
+ as far as cron tasks ... Our team likes to stay out of the business of maintenance 
+ for specific sites ... so either the CGI could spawn off a little task that runs after
+ the pages done displaying that looks for old files and cleans them up, or we could set
+ up a service account for you which would have access to write into this directory and
+ you could set up the Cron task on one of your servers. 
+
+ to preview changes
+-------------------------------------
+
+ http://or.water.usgs.gov/preview/htdocs/projs_dir/cpras/t.html
+
+ to manually update
+-------------------------------------
+
+ cd /afs/.usgs.gov/www/or.water/htdocs/projs_dir
+
+ fs examine cpras
+
+File cpras (1970092440.521.231471) contained in volume 1970092440
+Volume status for vid = 1970092440 named www.or_water
+Current disk quota is 5000000
+Current blocks used are 4021950
+The partition has 14995384 blocks available out of 56575591
+
+ fs whereis cpras
+File cpras is on host natwebcaaa01.wr.usgs.gov 
+
+ finger www.or_water@natwebcaaa01.wr.usgs.gov 
+
+[natwebcaaa01.wr.usgs.gov] 
+Volume release request for 'www.or_water' accepted.
+  replicating volume, this might take a while ...
+Read-only copies up to date.
+
+
+
+
+
+./t.py --longitude -120.81387691535224 --latitude 46.423308095146126 --x_coordinate 1561263.8314058625 --y_coordinate 397630.901255142 --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --color framework_color_map.txt
+
+
+./framework_well_log.py --longitude -120.81387691535224 --latitude 46.423308095146126 --x_coordinate 1561263.8314058625 --y_coordinate 397630.901255142 --rasters tiffs/obtop.tif tiffs/smtop.tif tiffs/wntop.tif tiffs/grtop.tif tiffs/pmtop.tif --color framework_color_map.txt
+Raster obtop is type float32
+Content-type: application/json
+
+{
+  "status"        : "success",
+  "nrows"         :            3191,
+  "ncols"         :            3481,
+  "nlays"         :               5,
+  "xy_multiplier" :            1.00,
+  "z_multiplier"  :            1.00,
+  "longitude"     :         -120.81,
+  "latitude"      :           46.42,
+  "easting"       :      1561263.83,
+  "northing"      :       397630.90,
+  "row"           :            1584,
+  "column"        :             701,
+  "cell_width"    :          500.00,
+  "explanation_fields": [ "unit", "color", "explanation" ],
+  "explanations" : 
+             [
+                 {
+                   "unit": "obtop",
+                   "color": "#FFFF82",
+                   "explanation": "Overburden"
+                 },
+                 {
+                   "unit": "wntop",
+                   "color": "#91C691",
+                   "explanation": "Wanapum Basalt"
+                 },
+                 {
+                   "unit": "grtop",
+                   "color": "#BE977B",
+                   "explanation": "Grande Ronde Basalt"
+                 },
+                 {
+                   "unit": "pmtop",
+                   "color": "#B6BEE9",
+                   "explanation": "Older bedrock"
+                 }
+             ],
+  "well_log_fields": [ "unit", "top", "bottom", "color", "description" ],
+  "well_log" : 
+             [
+              {
+               "unit"         : "obtop",
+               "top"          :         1296.36,
+               "bottom"       :         1141.29,
+               "color"        : "#FFFF82",
+               "description"  : "Overburden"
+               }, 
+              {
+               "unit"         : "wntop",
+               "top"          :         1141.29,
+               "bottom"       :         1134.88,
+               "color"        : "#91C691",
+               "description"  : "Wanapum Basalt"
+               }, 
+              {
+               "unit"         : "grtop",
+               "top"          :         1134.88,
+               "bottom"       :         -923.04,
+               "color"        : "#BE977B",
+               "description"  : "Grande Ronde Basalt"
+               }, 
+              {
+               "unit"         : "pmtop",
+               "top"          :         -923.04,
+               "bottom"       :        -1500.00,
+               "color"        : "#B6BEE9",
+               "description"  : "Older bedrock"
+               } 
+      ], 
+  "cell_count":                  4,
+  "x_axis_min":               0.00,
+  "x_axis_max":             500.00,
+  "elevation_min":         -923.04,
+  "elevation_max":         1296.36,
+  "y_axis_max":            1296.36,
+  "y_axis_min":           -1500.00
+}
+
