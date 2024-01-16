@@ -1,0 +1,304 @@
+
+
+gdal_translate -of PNG -expand rgba geotest.tif geotest.png
+
+gdal_translate -of PNG geotest.tif geotest.png
+
+
+gdalwarp -co TILED=YES -co COMPRESS=DEFLATE -t_srs EPSG:3857 image.tif newImage.tif
+
+
+gdal2tiles.py newImage.tif
+
+
+gdalinfo geotest.tif
+=======================================================================
+Driver: GTiff/GeoTIFF
+Files: geotest.tif
+Size is 3790, 2433
+Coordinate System is:
+GEOGCRS["WGS 84",
+    ENSEMBLE["World Geodetic System 1984 ensemble",
+        MEMBER["World Geodetic System 1984 (Transit)"],
+        MEMBER["World Geodetic System 1984 (G730)"],
+        MEMBER["World Geodetic System 1984 (G873)"],
+        MEMBER["World Geodetic System 1984 (G1150)"],
+        MEMBER["World Geodetic System 1984 (G1674)"],
+        MEMBER["World Geodetic System 1984 (G1762)"],
+        MEMBER["World Geodetic System 1984 (G2139)"],
+        ELLIPSOID["WGS 84",6378137,298.257223563,
+            LENGTHUNIT["metre",1]],
+        ENSEMBLEACCURACY[2.0]],
+    PRIMEM["Greenwich",0,
+        ANGLEUNIT["degree",0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS["geodetic latitude (Lat)",north,
+            ORDER[1],
+            ANGLEUNIT["degree",0.0174532925199433]],
+        AXIS["geodetic longitude (Lon)",east,
+            ORDER[2],
+            ANGLEUNIT["degree",0.0174532925199433]],
+    USAGE[
+        SCOPE["Horizontal component of 3D system."],
+        AREA["World."],
+        BBOX[-90,-180,90,180]],
+    ID["EPSG",4326]]
+Data axis to CRS axis mapping: 2,1
+Origin = (-121.844957854000000,48.419448160000002)
+Pixel Size = (0.001709246105805,-0.001709246105631)
+Metadata:
+  AREA_OR_POINT=Area
+Image Structure Metadata:
+  INTERLEAVE=BAND
+Corner Coordinates:
+Upper Left  (-121.8449579,  48.4194482) (121d50'41.85"W, 48d25'10.01"N)
+Lower Left  (-121.8449579,  44.2608524) (121d50'41.85"W, 44d15'39.07"N)
+Upper Right (-115.3669151,  48.4194482) (115d22' 0.89"W, 48d25'10.01"N)
+Lower Right (-115.3669151,  44.2608524) (115d22' 0.89"W, 44d15'39.07"N)
+Center      (-118.6059365,  46.3401503) (118d36'21.37"W, 46d20'24.54"N)
+Band 1 Block=3790x2 Type=Byte, ColorInterp=Gray
+  NoData Value=255
+
+
+gdalinfo geomap_f
+=======================================================================
+Driver: AIG/Arc/Info Binary Grid
+Files: geomap_f
+       geomap_f.aux.xml
+       geomap_f/dblbnd.adf
+       geomap_f/hdr.adf
+       geomap_f/log
+       geomap_f/metadata.xml
+       geomap_f/prj.adf
+       geomap_f/sta.adf
+       geomap_f/vat.adf
+       geomap_f/w001001.adf
+       geomap_f/w001001x.adf
+Size is 3151, 2958
+Coordinate System is:
+PROJCRS["NAD83 / Washington South",
+    BASEGEOGCRS["NAD83",
+        DATUM["North American Datum 1983",
+            ELLIPSOID["GRS 1980",6378137,298.257222101,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",4269]],
+    CONVERSION["unnamed",
+        METHOD["Lambert Conic Conformal (2SP)",
+            ID["EPSG",9802]],
+        PARAMETER["Latitude of false origin",45.3333333333333,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8821]],
+        PARAMETER["Longitude of false origin",-120.5,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8822]],
+        PARAMETER["Latitude of 1st standard parallel",47.3333333333333,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8823]],
+        PARAMETER["Latitude of 2nd standard parallel",45.8333333333333,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8824]],
+        PARAMETER["Easting at false origin",1640416.66666667,
+            LENGTHUNIT["Foot_US",0.304800609601219],
+            ID["EPSG",8826]],
+        PARAMETER["Northing at false origin",0,
+            LENGTHUNIT["Foot_US",0.304800609601219],
+            ID["EPSG",8827]]],
+    CS[Cartesian,2],
+        AXIS["easting",east,
+            ORDER[1],
+            LENGTHUNIT["Foot_US",0.304800609601219]],
+        AXIS["northing",north,
+            ORDER[2],
+            LENGTHUNIT["Foot_US",0.304800609601219]]]
+Data axis to CRS axis mapping: 1,2
+Origin = (1313631.620506429113448,1125639.234474905300885)
+Pixel Size = (500.000000000000000,-500.000000000000000)
+Corner Coordinates:
+Upper Left  ( 1313631.621, 1125639.234) (121d50'41.85"W, 48d24'42.54"N)
+Lower Left  ( 1313631.621, -353360.766) (121d44'54.99"W, 44d21'26.73"N)
+Upper Right ( 2889131.621, 1125639.234) (115d22' 2.60"W, 48d18'29.13"N)
+Lower Right ( 2889131.621, -353360.766) (115d44' 3.17"W, 44d15'39.87"N)
+Center      ( 2101381.621,  386139.234) (118d40'24.37"W, 46d22'39.32"N)
+Band 1 Block=256x4 Type=Byte, ColorInterp=Undefined
+  Min=1.000 Max=5.000 
+  Minimum=1.000, Maximum=5.000, Mean=2.917, StdDev=1.438
+  NoData Value=255
+  Metadata:
+    STATISTICS_APPROXIMATE=YES
+    STATISTICS_MAXIMUM=5
+    STATISTICS_MEAN=2.917175225337
+    STATISTICS_MINIMUM=1
+    STATISTICS_STDDEV=1.4378333751957
+    STATISTICS_VALID_PERCENT=62.71
+<GDALRasterAttributeTable tableType="thematic">
+  <FieldDefn index="0">
+    <Name>VALUE</Name>
+    <Type>0</Type>
+    <Usage>5</Usage>
+  </FieldDefn>
+  <FieldDefn index="1">
+    <Name>COUNT</Name>
+    <Type>0</Type>
+    <Usage>1</Usage>
+  </FieldDefn>
+  <FieldDefn index="2">
+    <Name>MODELEDGEOLOGY</Name>
+    <Type>2</Type>
+    <Usage>0</Usage>
+  </FieldDefn>
+  <Row index="0">
+    <F>1</F>
+    <F>1633036</F>
+    <F>Overburden</F>
+  </Row>
+  <Row index="1">
+    <F>2</F>
+    <F>741956</F>
+    <F>Saddle Mountain Basalt</F>
+  </Row>
+  <Row index="2">
+    <F>3</F>
+    <F>1044286</F>
+    <F>Wanapum Basalt</F>
+  </Row>
+  <Row index="3">
+    <F>4</F>
+    <F>1590461</F>
+    <F>Grande Ronde Basalt</F>
+  </Row>
+  <Row index="4">
+    <F>5</F>
+    <F>903875</F>
+    <F>Older Rock</F>
+  </Row>
+</GDALRasterAttributeTable>
+
+
+===========================================================
+
+from PIL import Image
+
+img_path = r"geotest.tif"
+
+# open the image and convert to 3-channel RGB
+img = Image.open(img_path).convert('RGB')
+
+# get the image data
+data = img.getdata()
+
+new_pixel_values = []
+for pixel in data:
+
+    # Find pixels with value 1
+    #
+    if pixel == (1, 1, 1):
+    
+        # Replace with a specified colour #ffff82
+        #
+        new_pixel_values.append((255, 255, 130))
+    
+    # Find pixels with value 2
+    #
+    elif pixel == (2, 2, 2):
+    
+        # Replace with a specified colour #eba8a8
+        #
+        new_pixel_values.append((235, 168, 168))
+    
+    # Find pixels with value 3
+    #
+    elif pixel == (3, 3, 3):
+    
+        # Replace with a specified colour #91c691
+        #
+        new_pixel_values.append((145, 198, 145))
+    
+    # Find pixels with value 4
+    #
+    elif pixel == (4, 4, 4):
+    
+        # Replace with a specified colour #be977b
+        #
+        new_pixel_values.append((190, 151, 123))
+
+    # or just catch the remainder with `else`
+    else:
+    
+        # Replace with a specified colour #b6bee9
+        #
+        new_pixel_values.append((182, 190, 233))
+
+# update the pixel values
+img.putdata(new_pixel_values)
+
+# save the RGB image
+outpath = img_path[:-4] + '_rgb.png'
+img.save(outpath)
+
+
+===========================================================
+import rasterio
+import tkinter as tk
+from PIL import Image, ImageTk
+
+root = tk.Tk()
+west, south, east, north = 0, 0, 0, 0
+
+dataset = rasterio.open('link to GeoTIFF', 'r')
+bands = [1, 2, 3]
+data = dataset.read(bands)
+transform = rasterio.transform.from_bounds(west, south, east, north, data.shape[1], data.shape[2])
+crs = {'init': 'epsg:3006'}
+
+with rasterio.open('link to save png', 'w', driver='PNG',
+               width=data.shape[1], height=data.shape[2],
+               count=3, dtype=data.dtype, nodata=0,
+               transform=transform, crs=crs, format='PNG') as dst:
+
+dst.write(data, indexes=bands)
+
+load = Image.open('link to open png in tkinter')
+render = ImageTk.PhotoImage(load)
+img = tk.Label(root, image=render)
+img.image = render
+
+root.mainloop()
+
+
+===========================================================
+import os
+from osgeo import gdal
+
+def geotiff_to_png(input_path, output_path=None, return_object=False):
+"""
+Converts a GeoTIFF file to a PNG file or object. Specific to Skysatimages with 4 bands (blue, green, red, nir).
+
+Args:
+    input_path (str): The file path of the input GeoTIFF file.
+    output_path (str, optional): The file path of the output PNG file. If not provided, PNG object is returned. Defaults to None.
+    return_object (bool, optional): Whether to return the PNG data as an object. If True, the output_path parameter will be ignored. Defaults to False.
+
+Returns:
+    numpy.ndarray or None: If output_path is not provided and return_object is True, returns a 3D numpy array representing the PNG image. Otherwise, returns None.
+
+"""
+# Open input file
+dataset = gdal.Open(input_path)
+output_types = [gdal.GDT_Byte, gdal.GDT_UInt16, gdal.GDT_Float32]
+
+# Define output format and options
+options = gdal.TranslateOptions(format='PNG', bandList=[3,2,1], creationOptions=['WORLDFILE=YES'], outputType=output_types[0])
+
+# Translate to PNG
+if output_path is not None:
+    gdal.Translate(output_path, dataset, options=options)
+    print(f'Successfully saved PNG file to {output_path}')
+
+# Return PNG object
+if return_object:
+    mem_driver = gdal.GetDriverByName('MEM')
+    mem_dataset = mem_driver.CreateCopy('', dataset, 0)
+    png_data = mem_dataset.ReadAsArray()
+    return png_data

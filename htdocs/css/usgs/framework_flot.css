@@ -1,0 +1,423 @@
+/**
+ * Namespace: framework_flot.css
+ *
+ * The file framework_flot.css is a css file to providing styling for the graphs
+ *  displayed in Framework Mapper.
+ *
+ * version 2.00
+ * June 2, 2023
+*/
+
+/*
+###############################################################################
+# Copyright (c) Oregon Water Science Center
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+###############################################################################
+*/
+
+ .zoom_period_plot
+   {  
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+   }
+
+ .period_selected_plot
+   {  
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width:       100%;
+   }
+
+ #small_well_log 
+   {  
+    position: top;
+    float: left;
+    display: inline-block;
+    margin-left:   2px;
+    margin-top:    2px;
+    width:       170px;
+    height:      500px;
+   }  
+
+ #cell_graph 
+   {  
+    position: top;
+    float: left;
+    display: inline-block;
+    margin-left:   2px;
+    margin-top:    2px;
+    width:       170px;
+    height:      500px;
+   }  
+                 
+ #cell_legend 
+   {  
+    position: top;
+    display: inline-block;
+    float: left;
+    margin-left:   2px;
+    margin-top:    2px;
+    width:       200px;
+    height:      500px;
+    }  
+                
+ #cell_overview 
+   {  
+    display: inline-block;
+    float: left;
+    margin-left:  10px;
+    margin-top:   20px;
+    width:       200px;
+    height:      250px;
+   }  
+                
+ #xsec_graph {  
+          margin-left:   2px;
+          margin-top:    2px;
+          width:       900px;
+          height:      300px;
+         }  
+                
+ #xsec_overview {  
+          margin-left:  10px;
+          margin-top:   20px;
+          width:       900px;
+          height:      100px;
+         }  
+                
+ #xsec_legend {  
+          margin-left:   2px;
+          margin-top:    2px;
+          width:       200px;
+          height:      500px;
+         }  
+     
+  #xsec
+    {
+     border-width: 0 px;
+    }        
+         
+ #y_axis_label {
+                vertical-align: middle;
+               }     
+         
+ #left_y_axis 
+   {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 9.0pt;
+    font-weight: bold;
+    color:#333;
+    vertical-align: middle;
+    text-align:      right;
+    width:            60px;
+   }     
+         
+  #right_y_axis 
+   {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 9.0pt;
+    font-weight: bold;
+    color:#333;
+    vertical-align: middle;
+    text-align:      left;
+    width:            60px;
+   }     
+         
+  #x_axis       {
+                 vertical-align: top;
+                 text-align:  center;
+                } 
+   
+  #tooltip 
+    {
+      position: absolute;
+      display: none;
+      border: 1px solid black;
+      border-radius: 0.5em;
+      padding: 0.4em 0.6em;
+      background-color: #D3D3D3;
+      background: #D3D3D3;
+      opacity: 1.0;
+      color: black;
+      font-family: Verdana, Arial, Helvetica;
+      font-size: 8.0pt;
+      font-weight: bold;
+      text-align: left;
+    }
+   
+  #flotTip 
+    {
+      position: absolute;
+      display: none;
+      border: 1px solid black;
+      padding: 2px;
+      background-color: #D3D3D3;
+      opacity: 1.0;
+      color: black;
+      font-family: Verdana, Arial, Helvetica;
+      font-size: 6.0pt;
+      font-weight: bold;
+      text-align: left;
+      z-index: 100003;
+    }
+              
+  .left_pane_topic
+    {
+     font-family: Verdana, Arial, Helvetica;
+     font-size: 9pt;
+     font-weight: bold;
+     color:#333;
+     text-align: center;
+    }        
+              
+  .left_pane_text
+    {
+     font-family: Verdana, Arial, Helvetica;
+     font-size: 8pt;
+     font-weight: normal;
+     color:#333;
+    }        
+
+ .flot_placeholder .flot_cell_graph #cell_graph
+   {  
+    width:  600px;
+    height: 300px;
+   }
+
+ .flot_overview
+   {  
+    width:  600px;
+    height: 130px;
+   }
+
+ .flot_plot_labels 
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 12.0pt;
+    font-weight: bold;
+    color:#333;
+   }
+
+ .flot_y_axis
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 9.0pt;
+    font-weight: bold;
+    color:#333;
+    border:0px solid red;
+   }
+
+ .flot_x_axis 
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 9.0pt;
+    font-weight: bold;
+    color:#333;
+    border:0px solid red;
+    text-align: center;
+    vertical-align: bottom;
+   }
+
+ .flot_tooltip
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+   }
+
+ .flot_legend
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+    margin-left: 10px;
+   }
+
+ .flot_hoverdata
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+    text-align: left;
+    font-weight: bold;
+   }
+
+ .flot_checktooltip
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+    margin-left: 30px;
+   }
+
+ .flot_instructions
+   {  
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: center;
+    clear: left;
+   }
+
+ .tickLabel
+   {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+    font-weight: bold;
+    color: #000000;
+   }
+
+ .tickLabels .xAxis .tickLabel
+   {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+    font-weight: bold;
+   }
+
+ .y1Axis
+   {
+    color: #8A0808;
+   }
+
+ .y2Axis
+   {
+    color: #21610B;
+   }
+
+ .y3Axis
+   {
+    color: #08298A;
+   }
+
+ #scanner_tooltip 
+   { 
+    height: 30px;
+    vertical-align: top;
+    text-align: left;
+   } 
+
+ #explanation
+   {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 11.0pt;
+    font-weight: bold;
+    margin-left: 10px;
+    color:#000000;
+   }
+
+ .legendTable
+   {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 9.0pt;
+    font-weight: bold;
+    margin-left: 10px;
+    color:#000000;
+   }
+
+ .legendTable th, .legendTable td
+   {
+    padding: 5px;
+   }
+
+ .legendLabel
+   {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 9.0pt;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: bottom;
+    color:#000000;
+    white-space: nowrap;
+   }
+
+ .legendDepth
+   {
+    text-align: right;
+   }
+
+ .legendColorBox 
+   { 
+    display: inline-block; 
+    margin-right: 4px; 
+    width: 20px;
+    height: 0px;
+    border: 1px;
+    overflow: hidden;
+    vertical-align: center;
+   } 
+
+ .legendTriangle
+   {  
+    display: inline-block; 
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid red;
+    position:relative;
+   }
+
+ .legendTriangle:after
+   {  
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: -3px;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 5px solid white;
+   }
+
+ .legendCircle
+   {  
+    width: 6px;
+    height: 6px;
+    position: relative;
+    top: 3px;
+    left: 1px;
+    -moz-border-radius : 3px; /* Firefox */
+    -webkit-border-radius : 3px; /* Safari & Chrome */
+    -khtml-border-radius : 3px; /* Linux browsers */ 
+    border-radius : 6px 6px 6px 6px; /* CSS3 compatible browsers */
+    background: transparent;
+    border: 2px solid #f00;
+   }
+
+ .legendSphere
+   {  
+    width: 6px;
+    height: 6px;
+    -moz-border-radius : 2px; /* Firefox */
+    -webkit-border-radius : 2px; /* Safari & Chrome */
+    -khtml-border-radius : 2px; /* Linux browsers */ 
+    border-radius : 2px; /* CSS3 compatible browsers */
+    background: #f00;
+   }
+
+ .legendValue
+   { 
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 8.0pt;
+    font-weight: bold;
+    width: 60px;
+    vertical-align: center;
+    text-align: right;
+   } 
